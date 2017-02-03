@@ -1,0 +1,14 @@
+# PKG_LIBS=$(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) // The preferred way to specify use of the BLAS libraries is with a Makevars file containing the single line
+# PKG_FCFLAGS = -x f95-cpp-input -c -fdefault-real-8 
+
+PKG_FFLAGS = $(FPICFLAGS) $(SHLIB_FFLAGS) 
+all: $(SHLIB)
+parameters.o: parameters.f90
+environment.o: environment.f90 
+management.o: management.f90
+tree.o: tree.f90 
+belowgroundres.o: belowgroundres.f90 
+soil.o: soil.f90 
+set_params.o: set_params.f90 
+BASFOR.o: BASFOR.f90
+
